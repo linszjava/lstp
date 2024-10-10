@@ -1,0 +1,32 @@
+server:
+  port: 8890
+spring:
+  application:
+    name: lstp-zstp-service
+  cloud:
+    nacos:
+      config:
+        enabled: true
+        server-addr: localhost:8848
+      discovery:
+        server-addr: localhost:8848
+        namespace: 4a11c94f-d36f-4a3d-86f4-d0bf359f9dab
+
+knife4j:
+  enable: true
+  openapi:
+    title: lstp-zstp-service-接口
+    description: "lstp-zstp知识图谱模块接口"
+    email: xiaoymin@foxmail.com
+    concat: 八一菜刀
+    url: https://docs.xiaominfo.com
+    version: v4.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
+    group:
+      test1:
+        group-name: 知识图谱-人物模块
+        api-rule: package
+        api-rule-resources:
+          - com.lin.zstp.renwu.controller
