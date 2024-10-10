@@ -3,6 +3,7 @@ package com.lin.common.zstp.renwu.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiParam;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * <p>朝代人物总览</p>
@@ -13,6 +14,7 @@ import lombok.Data;
  */
 @Data
 @ApiModel("人物总览")
+@Accessors(chain = true)
 public class RenWuZongLan {
 
     @ApiParam("朝代id")

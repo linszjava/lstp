@@ -2,12 +2,11 @@ package com.lin.todb.renwu.controller;
 
 import com.lin.common.result.R;
 import com.lin.todb.renwu.openfeign.RenwuOpenfeignService;
+import com.lin.todb.renwu.service.impl.RenwuTodbInterfaceService;
 import io.swagger.annotations.Api;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -26,15 +25,19 @@ public class TodbRenwuController {
     @Autowired
     private RenwuOpenfeignService renwuOpenfeignService;
 
+    @Autowired
+    private RenwuTodbInterfaceService renwuTodbInterfaceService;
 
-    @GetMapping("/test")
-    public String test() {
-        return "test111";
-    }
 
     @GetMapping("/findAllPeople")
     public Map<String,Object> RenWuZongLan(){
         return renwuOpenfeignService.OpenfeignRenWuZongLan();
+    }
+
+    @PutMapping("/save")
+    public R<String> saveTodb(){
+        renwuTodbInterfaceService.FindAllPeoplesSaveTodb();
+        return R.ok();
     }
 
 }

@@ -11,12 +11,18 @@ spring:
       discovery:
         server-addr: localhost:8848
         namespace: 4a11c94f-d36f-4a3d-86f4-d0bf359f9dab
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: linsz99@
+    username: root
+    url:
 
 feign:
   httpclient:
     connection-timeout: 60000
     max-connections: 20000
 
+# mysql配置
 
 #knife4j:
 #  enable: true
