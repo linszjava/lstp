@@ -15,14 +15,14 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: linsz99@
     username: root
-    url:
+    url: jdbc:mysql//localhost:3306?lstp&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+
 
 feign:
   httpclient:
     connection-timeout: 60000
     max-connections: 20000
 
-# mysql配置
 
 #knife4j:
 #  enable: true
@@ -42,4 +42,8 @@ feign:
 #        api-rule: package
 #        api-rule-resources:
 #          - com.lin.todb.renwu.controller
-
+mybatis-plus:
+  mapper-locations: mapper/*.xml
+  configuration:
+    lazy-loading-enabled: true
+    map-underscore-to-camel-case: true

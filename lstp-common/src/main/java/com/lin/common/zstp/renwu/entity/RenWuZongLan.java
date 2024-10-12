@@ -1,5 +1,7 @@
 package com.lin.common.zstp.renwu.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.lin.common.zstp.entity.basicEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiParam;
 import lombok.Data;
@@ -15,7 +17,8 @@ import lombok.experimental.Accessors;
 @Data
 @ApiModel("人物总览")
 @Accessors(chain = true)
-public class RenWuZongLan {
+@TableName(value ="t_renwuzonglan")
+public class RenWuZongLan extends basicEntity {
 
     @ApiParam("朝代id")
     private Integer id;
@@ -30,5 +33,5 @@ public class RenWuZongLan {
     private String end;
 
     @ApiParam("该朝代人物数量")
-    private Integer count;
+    private String count;
 }
